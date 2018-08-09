@@ -1,0 +1,46 @@
+{
+	"ImportPath": "github.com/buglloc/bogus-pgsrv",
+	"GoVersion": "go1.10",
+	"GodepVersion": "v80",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/buglloc/simplelog",
+			"Rev": "ab9c6eed3b6ac0bd61618a668cf8c03472470b13"
+		},
+		{
+			"ImportPath": "github.com/go-stack/stack",
+			"Comment": "v1.7.0",
+			"Rev": "259ab82a6cad3992b4e21ff5cac294ccb06474bc"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-colorable",
+			"Comment": "v0.0.9-12-g6cc8b47",
+			"Rev": "6cc8b475d4682021d75d2cbe2bc481bec4ce98e5"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-isatty",
+			"Comment": "v0.0.3-7-g6ca4dbf",
+			"Rev": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh/terminal",
+			"Rev": "1875d0a70c90e57f11972aefd42276df65e895b9"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "ac767d655b305d4e9612f5f6e33120b9176c4ad4"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows",
+			"Rev": "ac767d655b305d4e9612f5f6e33120b9176c4ad4"
+		},
+		{
+			"ImportPath": "gopkg.in/inconshreveable/log15.v2",
+			"Comment": "v2.13",
+			"Rev": "0decfc6c20d9ca0ad143b0e89dcaa20f810b4fb3"
+		}
+	]
+}
