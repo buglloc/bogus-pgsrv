@@ -9,10 +9,6 @@ import (
 	"github.com/buglloc/bogus-pgsrv/pkg/pgsrv"
 )
 
-var (
-	addr string
-)
-
 func main() {
 	var addr string
 	var breakTime int
