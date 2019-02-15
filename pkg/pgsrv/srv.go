@@ -29,10 +29,9 @@ func (s *server) Listen(laddr string) (err error) {
 
 		go s.serve(conn)
 	}
-	return
 }
 
-func (s *server) serve(conn net.Conn) error {
+func (s *server) serve(conn net.Conn) {
 	defer conn.Close()
 
 	logger := log.Child("client_addr", conn.RemoteAddr().String())
@@ -47,8 +46,10 @@ func (s *server) serve(conn net.Conn) error {
 		logger.Info("failed to process session", "err", err.Error())
 	} else {
 		logger.Info("session successfully processed, time to stop listening")
-		s.listener.Close()
+		if err = s.listener.Close(); err != nil {
+			logger.Info("failed to close listener", "err", err.Error())
+		}
 	}
 
-	return err
+	return
 }

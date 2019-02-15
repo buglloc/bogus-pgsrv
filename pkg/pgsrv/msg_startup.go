@@ -12,7 +12,7 @@ import (
 // version.
 func (m msg) StartupVersion() (string, error) {
 	if m.Type() != 0 {
-		return "", fmt.Errorf("Not an untyped startup message: %q", m.Type())
+		return "", fmt.Errorf("not an untyped startup message: %q", m.Type())
 	}
 
 	major := int(binary.BigEndian.Uint16(m[4:6]))
@@ -27,7 +27,7 @@ func (m msg) StartupVersion() (string, error) {
 // of key-values, terminated by a NULL character.
 func (m msg) StartupArgs() (map[string]interface{}, error) {
 	if m.Type() != 0 {
-		return nil, fmt.Errorf("Not an untyped startup message: %q", m.Type())
+		return nil, fmt.Errorf("not an untyped startup message: %q", m.Type())
 	}
 
 	buff := m[8:] // skip the length (4-bytes) and version (4-bytes)
@@ -63,7 +63,7 @@ func (m msg) StartupArgs() (map[string]interface{}, error) {
 // AuthPassword parses the password from auth response
 func (m msg) AuthPassword() (string, error) {
 	if m.Type() != 0 && m.Type() != 'p' {
-		return "", fmt.Errorf("Not an untyped or 'p' auth message: %q", m.Type())
+		return "", fmt.Errorf("not an untyped or 'p' auth message: %q", m.Type())
 	}
 
 	var password bytes.Buffer
@@ -137,7 +137,7 @@ func (m msg) IsCancel() bool {
 
 func (m msg) CancelKeyData() (int32, int32, error) {
 	if !m.IsCancel() {
-		return -1, -1, fmt.Errorf("Not a cancel message")
+		return -1, -1, fmt.Errorf("not a cancel message")
 	}
 
 	pid := int32(binary.BigEndian.Uint32(m[8:12]))
