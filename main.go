@@ -17,7 +17,7 @@ func main() {
 	var addr string
 	var breakTime int
 	flag.StringVar(&addr, "addr", ":5432", "addr to listen")
-	flag.IntVar(&breakTime, "break-time", 500, "break time (ms)")
+	flag.IntVar(&breakTime, "break-time", 1000, "break time (ms)")
 	flag.Parse()
 
 	sleepTime := time.Duration(breakTime) * time.Millisecond
